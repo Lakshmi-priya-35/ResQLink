@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>Donor Match Portal</div>
+    <nav>
+      <a href="file:///E:/ResQLink/index.html">Home</a>
+      <a href="file:///E:/ResQLink/login_user.html">User Login</a>
+      <a href="file:///E:/ResQLink/login_admin.html">Admin Login</a>
+    </nav>
+  </header>
+  <div class="main-container">
+    <h2>Register as Donor/Recipient</h2>
+    <form action="file:///E:/ResQLink/dashboard.html" method="post">
+      <label>Full Name:</label>
+      <input type="text" required>
+      <label>Email:</label>
+      <input type="email" required>
+      <label>Aadhar Number:</label>
+      <input type="text" placeholder="e.g. 1234 5678 9012" pattern="[0-9]{12}" title="Aadhar number must be 12 digits">
+      <label>Password:</label>
+      <input type="password" name="password" id="password" required>
+      <label>Confirm Password:</label>
+      <input type="password" name="confirm_password" id="confirm_password" required>
+      <label>Role:</label>
+      <select required>
+        <option value="" disabled selected>Select an option</option>
+        <option>Donor</option>
+        <option>Recipient</option>
+      </select>
+      <label>Blood Group:</label>
+      <select required>
+        <option value="" disabled selected>Select a blood group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+      </select>
+      <label>Organ (if donor):</label>
+      <input type="text" placeholder="e.g. Kidney">
+      <label>City:</label>
+      <input type="text" required>
+      <label>Medical History:</label>
+      <textarea placeholder="Enter any relevant medical history (e.g., past surgeries, chronic conditions)" rows="5"></textarea>
+      <label>
+        <input type="checkbox" name="terms" required>
+        I agree to the Terms and Conditions
+      </label>
+      <button class="btn" type="submit">Register</button>
+    </form>
+  </div>
+  <footer>© 2025 Donor Match</footer>
+  <script>
+    
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm_password').value;
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        alert('Passwords do not match!');
+      }
+    });
+  </script>
+</body>
+</html>

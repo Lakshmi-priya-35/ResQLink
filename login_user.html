@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>Donor Match Portal</div>
+    <nav>
+      <a href="file:///E:/ResQLink/index.html">Home</a>
+      <a href="file:///E:/ResQLink/login_admin.html">Admin Login</a>
+      <a href="file:///E:/ResQLink/register.html">Register</a>
+    </nav>
+  </header>
+  <div class="main-container">
+    <h2>User Login</h2>
+    <form action="file:///E:/ResQLink/dashboard.html" method="post">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Password:</label>
+      <input type="password" name="password" id="password" required>
+      <label>
+        <input type="checkbox" id="show-password"> Show Password
+      </label>
+      <label>
+        <input type="checkbox" name="remember_me"> Remember Me
+      </label>
+      <label>CAPTCHA (Enter code: <strong>XYZ123</strong>):</label>
+      <input type="text" name="captcha" required pattern="XYZ123" title="Enter the code XYZ123">
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <p>Not registered? <a href="file:///E:/ResQLink/register.html">Register here</a>.</p>
+  </div>
+  <footer>© 2025 Donor Match</footer>
+  <script>
+   
+    document.getElementById('show-password').addEventListener('change', function() {
+      const passwordField = document.getElementById('password');
+      passwordField.type = this.checked ? 'text' : 'password';
+    });
+  </script>
+</body>
+</html>
